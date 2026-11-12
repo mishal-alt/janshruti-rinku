@@ -160,7 +160,7 @@
     off.width = cw; off.height = ch;
     var o = off.getContext('2d');
 
-    var fam = '"Tiro Devanagari Hindi", "Noto Sans Devanagari", serif';
+    var fam = '"Noto Serif Devanagari", "Noto Sans Devanagari", serif';
     var twoLines = cw < 560;
     var lines = ['धन्यवाद'];
     var size = twoLines ? Math.min(ch * 0.6, cw * 0.26) : Math.min(ch * 0.66, cw * 0.17);
@@ -171,7 +171,7 @@
 
     /* shrink to fit */
     for (var guard = 0; guard < 22; guard++) {
-      o.font = '600 ' + size + 'px ' + fam;
+      o.font = '800 ' + size + 'px ' + fam;
       var widest = 0;
       for (var li = 0; li < lines.length; li++) {
         widest = Math.max(widest, o.measureText(lines[li]).width);

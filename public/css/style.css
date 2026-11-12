@@ -27,8 +27,8 @@
   --shadow-m:0 12px 34px -14px rgba(58,42,32,.28);
   --shadow-l:0 30px 70px -30px rgba(58,42,32,.42);
 
-  --f-display:"Tiro Devanagari Hindi","Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --f-title:"Tiro Devanagari Hindi","Marcellus",Georgia,serif;
+  --f-display:"Noto Serif Devanagari","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-title:"Noto Serif Devanagari","Marcellus",Georgia,serif;
   --f-body:"Noto Sans Devanagari","Jost","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-ml:"Noto Sans Devanagari","Nirmala UI",system-ui,sans-serif;
 
@@ -1800,3 +1800,8 @@ html[lang="hi"] .hero-names__n{font-size:1.18em}
 .scene--hero > .section-content{transform:none;transition:opacity .45s ease .05s}
 html[lang="hi"] .hero-chingam{opacity:0;transition:opacity .45s ease .2s}
 html[lang="hi"] .scene--hero.text-ready .hero-chingam{opacity:1}
+
+/* Client request: bold Hindi typography everywhere */
+html[lang="hi"] body,html[lang="hi"] body *{font-weight:600 !important;font-style:normal !important}
+html[lang="hi"] h1,html[lang="hi"] h2,html[lang="hi"] h3,html[lang="hi"] .sec-title,html[lang="hi"] .landing-names .n,html[lang="hi"] .hero-names__n,html[lang="hi"] .person-name,html[lang="hi"] .family-name,html[lang="hi"] .venue-name,html[lang="hi"] .tl-title,html[lang="hi"] .fact-v,html[lang="hi"] .gratitude-names,html[lang="hi"] em,html[lang="hi"] .btn-open__en{font-weight:700 !important}
+html[lang="hi"] .hero-names__n,html[lang="hi"] .landing-names .n{font-weight:800 !important}
