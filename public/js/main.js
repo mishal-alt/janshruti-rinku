@@ -751,7 +751,15 @@
     var imgH = Math.max(H, W / a);
     var barY = H / 2 - 0.1392 * imgH;
     var top = names.getBoundingClientRect().top - hero.getBoundingClientRect().top;
-    content.style.top = Math.round(barY - top + 20) + 'px';
+    var want = Math.round(barY - top + 38), floor = Math.round(barY - top + 14);
+    content.style.top = want + 'px';
+    /* on short screens keep the date clear of the lower artwork bar */
+    var date = hero.querySelector('.hero-date');
+    if (date) {
+      var bar2 = H / 2 + 0.0767 * imgH;
+      var over = date.getBoundingClientRect().bottom - hero.getBoundingClientRect().top - (bar2 - 6);
+      if (over > 0) content.style.top = Math.max(floor, want - Math.ceil(over)) + 'px';
+    }
   }
   run();
   setTimeout(run, 400); setTimeout(run, 1500);
