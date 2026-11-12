@@ -734,3 +734,28 @@
   })();
 
 })();
+
+/* Hindi hero: keep the names just below the artwork's decorative bar at every screen size */
+(function alignHeroNames() {
+  var hero = document.getElementById('hero');
+  var img = document.getElementById('heroImg');
+  var content = hero && hero.querySelector('.section-content');
+  var names = hero && hero.querySelector('.hero-names');
+  if (!hero || !content || !names) return;
+  function run() {
+    var a = (img && img.naturalWidth && img.naturalHeight) ? img.naturalWidth / img.naturalHeight : 0.4626;
+    var H = hero.clientHeight, W = hero.clientWidth;
+    if (!H || !W) return;
+    content.style.position = 'relative';
+    content.style.top = '0px';
+    var imgH = Math.max(H, W / a);
+    var barY = H / 2 - 0.1392 * imgH;
+    var top = names.getBoundingClientRect().top - hero.getBoundingClientRect().top;
+    content.style.top = Math.round(barY - top + 20) + 'px';
+  }
+  run();
+  setTimeout(run, 400); setTimeout(run, 1500);
+  window.addEventListener('resize', run, { passive: true });
+  window.addEventListener('orientationchange', run);
+  if (img && !img.complete) img.addEventListener('load', run);
+})();
