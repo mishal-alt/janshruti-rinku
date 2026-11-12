@@ -1794,3 +1794,9 @@ html[lang="hi"] .tl-meta,html[lang="hi"] .person-line,html[lang="hi"] .person-pl
 .portrait--joint.is-placeholder{background:linear-gradient(160deg,#3A2A1A,#20150D)}
 html[lang="hi"] .kicker,html[lang="hi"] .tl-date,html[lang="hi"] .venue-tag,html[lang="hi"] .fact-k,html[lang="hi"] .family-tag,html[lang="hi"] .person-role,html[lang="hi"] .cd-l{font-size:1.18em}
 html[lang="hi"] .hero-names__n{font-size:1.18em}
+
+/* Smoother video -> hero hand-off: quicker video fade, crisp text fade (no slide), and the bottom line waits for the names */
+#reveal.is-out{transition:opacity .6s var(--ease),visibility 0s linear .6s}
+.scene--hero > .section-content{transform:none;transition:opacity .45s ease .05s}
+html[lang="hi"] .hero-chingam{opacity:0;transition:opacity .45s ease .2s}
+html[lang="hi"] .scene--hero.text-ready .hero-chingam{opacity:1}

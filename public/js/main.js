@@ -199,7 +199,7 @@
   var heroEl = document.getElementById('hero');
   var heroReadyPromise = null;
   var heroIsReady = false;
-  var TEXT_REVEAL_MS = 520; /* after .loaded fade starts */
+  var TEXT_REVEAL_MS = 420; /* after .loaded fade starts */
 
   var HERO_CANDIDATES = (
     (heroImg && heroImg.getAttribute('data-candidates')) ||
